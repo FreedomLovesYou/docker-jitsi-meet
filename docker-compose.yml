@@ -184,7 +184,12 @@ services:
             - XMPP_RECORDER_DOMAIN
             - WHITEBOARD_COLLAB_SERVER_PUBLIC_URL
             - WHITEBOARD_COLLAB_SERVER_URL_BASE
-        networks:
+            - JICOFO_AUTH_PASSWORD=supersecurepassword
+            - JVB_AUTH_PASSWORD=supersecurepassword
+            - XMPP_PASSWORD=supersecurepassword
+            - ENABLE_AUTH=1
+            - AUTH_TYPE=internal    
+      networks:
             meet.jitsi:
         depends_on:
             - jvb
